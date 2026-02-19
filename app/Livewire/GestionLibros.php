@@ -21,6 +21,7 @@ class GestionLibros extends Component
         return view('livewire.gestion-libros', [
             'libros' => Libro::where('titulo', 'like', '%' . $this->search . '%')
                 ->orWhere('resena', 'like', '%' . $this->search . '%')
+                ->orderBy('categoria', 'asc')
                 ->orderBy('orden', 'asc')
                 ->get(),
         ])->layout('components.layouts.app');
