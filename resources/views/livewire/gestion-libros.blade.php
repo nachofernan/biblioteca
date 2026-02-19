@@ -110,8 +110,6 @@
             padding: 1px 5px !important;
             display: inline-block !important;
             margin-top: 0 !important;
-            line-height: 1.6 !important;
-            background-color: var(--card-color, #6366f1) !important;
         }
 
         /* Ícono de categoría: visible en print, pegado al borde derecho */
@@ -255,7 +253,7 @@
                             {{ $libro->titulo }}
                         </h2>
                     </div>
-                    <div class="inline-block {{ $ui['tag'] }} text-white text-[9px] font-black px-2 py-0.5 uppercase tracking-widest">
+                    <div class="inline-block text-gray-600 text-[9px] font-black px-2 py-0.5 uppercase tracking-widest">
                         {{ $libro->edad }}
                     </div>
                 </div>
