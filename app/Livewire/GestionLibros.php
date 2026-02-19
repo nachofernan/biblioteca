@@ -7,7 +7,7 @@ use App\Models\Libro;
 
 class GestionLibros extends Component
 {
-    public $titulo, $edad, $resena, $libro_id;
+    public $titulo, $edad, $resena, $categoria, $libro_id;
     public $search = ''; // Propiedad para el buscador
     public $isOpen = false;
 
@@ -28,7 +28,7 @@ class GestionLibros extends Component
 
     public function create()
     {
-        $this->reset(['titulo', 'edad', 'resena', 'libro_id']);
+        $this->reset(['titulo', 'edad', 'resena', 'categoria', 'libro_id']);
         $this->isOpen = true;
     }
 
@@ -39,6 +39,7 @@ class GestionLibros extends Component
         $this->titulo = $libro->titulo;
         $this->edad = $libro->edad;
         $this->resena = $libro->resena;
+        $this->categoria = $libro->categoria;
         $this->isOpen = true;
     }
 
@@ -48,6 +49,7 @@ class GestionLibros extends Component
             'titulo' => $this->titulo,
             'edad' => $this->edad,
             'resena' => $this->resena,
+            'categoria' => $this->categoria ?? 'Libros',
         ]);
         $this->isOpen = false;
     }
